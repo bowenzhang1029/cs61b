@@ -22,10 +22,6 @@ public class NBody {
         double radius = readRadius(filename);
         StdDraw.enableDoubleBuffering();
         StdDraw.setScale(-radius, radius);
-        StdDraw.picture(0, 0, "images/starfield.jpg");
-        for (Planet p: ps) {
-            p.draw();
-        }
         double t = 0;
         int n = ps.length;
         while(t <= T) {
@@ -41,10 +37,10 @@ public class NBody {
             StdDraw.picture(0, 0, "images/starfield.jpg");
             for (Planet p: ps) {
                 p.draw();
+            }
             StdDraw.show();
             StdDraw.pause(10);
             t += dt;
-            }
         }
         StdOut.printf("%d\n", n);
         StdOut.printf("%.2e\n", radius);
